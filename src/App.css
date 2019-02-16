@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+  background-color: black;
+  color: #f9e44e;
+  text-align: center;
+}
+
+.user-select {
+  margin: 10px;
+  font-size: 15px;
+}
+
+.user-input {
+  margin: 10px 5px;
+  font-size: 15px;
+}
+
+button:hover {
+  background-color: #721710; 
+  color: white;
+  font-size: 15px;
+}
+
+button{
+    font-size: 15px;
+}
+
+li{
+    list-style: none;
+}

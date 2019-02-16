@@ -27,6 +27,7 @@ export default class SearchForm extends React.Component {
           onSubmit={event => this.handleSubmit(event)}
         >
           <select
+            className="user-select"
             value={this.state.category}
             onChange={event => this.handleDropdownChange(event)}
           >
@@ -39,12 +40,13 @@ export default class SearchForm extends React.Component {
             <option>species</option>
           </select>
           <input
+            className="user-input"
             type="text"
             defaultValue="ex., Skywalker"
             onChange={event => this.handleSearchTermChange(event)}
           />
   
-            <button type="submit">Search</button>
+            <button className="search-button" type="submit">Search</button>
 
         </form>
       </div>

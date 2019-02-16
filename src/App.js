@@ -3,6 +3,7 @@ import SearchForm from "./components/SearchForm";
 import { Route } from "react-router-dom";
 import ResultsPage from "./components/ResultsPage";
 import ErrorPage from "./components/ErrorPage";
+import './App.css'
 
 class App extends Component {
   state = {
@@ -18,7 +19,7 @@ class App extends Component {
     return (
       <div>
         <header>
-          <h1>Star Wars Search</h1>
+        <h1>STAR WARS SEARCH</h1>
         </header>
         <Route
           exact
