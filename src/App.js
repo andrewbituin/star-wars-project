@@ -1,25 +1,60 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import SearchForm from "./components/SearchForm";
+import { Route } from "react-router-dom";
+import ResultsPage from "./components/ResultsPage";
+import ErrorPage from "./components/ErrorPage";
 
 class App extends Component {
+  state = {
+    category: "",
+    searchTerm: ""
+  };
+
+  handleUserSearchTerm = (cat, search) => {
+    this.setState({ category: cat, searchTerm: search });
+  };
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+      <div>
+        <header>
+          <h1>Star Wars Search</h1>
         </header>
+        <Route
+          exact
+          path="/"
+          render={rProps => {
+            return (
+              <SearchForm
+                {...rProps}
+                handleUserSearchTerm={this.handleUserSearchTerm}
+              />
+            );
+          }}
+        />
+
+        <Route
+          path="/results"
+          render={rProps => {
+            return (
+              <ResultsPage
+                {...rProps}
+                category={this.state.category}
+                searchTerm={this.state.searchTerm}
+              />
+            );
+          }}
+        />
+         <Route
+          path="/error"
+          render={rProps => {
+            return (
+              <ErrorPage
+                {...rProps}
+              />
+            );
+          }}
+        />
       </div>
     );
   }
